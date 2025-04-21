@@ -2,6 +2,7 @@ const form = document.querySelector("form"); // Sélection du formulaire
 const inputs = document.querySelectorAll("input, textarea");
 const consent = document.getElementById("consent");
 const consentError = document.getElementById("consent-error");
+const succes = document.querySelector(".succes");
 
 // Fonction de validation générale
 function validateInput(input) {
@@ -74,8 +75,12 @@ form.addEventListener("submit", function (event) {
       hasErrors = true;
    }
 
-   if (hasErrors) {
-      event.preventDefault(); // Empêche la soumission du formulaire s’il y a des erreurs
+   if (!hasErrors) {
+      succes.classList.add("show"); // Affiche le message de succès
+      setTimeout(() => {
+         form.reset(); // Réinitialise le formulaire après succès
+         succes.classList.remove("show"); // Cache après 3 secondes (ajustable)
+      }, 10000); // Ajuste la durée ici
    }
 });
 

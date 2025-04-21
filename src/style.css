@@ -203,3 +203,28 @@ form button:hover {
 button:active {
    animation: shake 0.3s ease-in-out;
 }
+
+/* Box Succes */
+.succes {
+   display: none;
+   flex-direction: column;
+   position: absolute;
+   top: 15px;
+   background-color: hsl(187, 24%, 22%);
+   color: white;
+   padding: 20px;
+   border-radius: 10px;
+   transition: 0.5s ease-out;
+}
+.sent {
+   display: flex;
+   gap: 10px;
+   margin-bottom: 10px;
+}
+.succes .thanks {
+   color: hsl(186, 15%, 59%);
+}
+.succes.show {
+   display: flex;
+   opacity: 1;
+}
