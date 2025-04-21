@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- displays site properly based on user's device -->
+
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="32x32"
+         href="./assets/images/favicon-32x32.png"
+      />
+      <link rel="stylesheet" href="src/style.css" />
+      <script src="src/script.js" defer></script>
+      <title>Frontend Mentor | Contact form</title>
+   </head>
+
+   <body>
+      <div class="container">
+         <h2>Contact Us</h2>
+         <form method="get">
+            <div class="full-name">
+               <div class="name">
+                  <label for="first-name"> First Name *</label>
+                  <input
+                     type="text"
+                     name="first-name"
+                     placeholder="Jade"
+                     id="first-name"
+                     data-error="first-name-error"
+                     required
+                  />
+                  <span class="error-message" id="first-name-error">
+                     This field is required</span
+                  >
+               </div>
+               <div class="name">
+                  <label for="last-name"> Last Name *</label>
+                  <input
+                     type="text"
+                     name="last-name"
+                     placeholder="John"
+                     id="last-name"
+                     data-error="last-name-error"
+                     required
+                  />
+                  <span class="error-message" id="last-name-error">
+                     This field is required</span
+                  >
+               </div>
+            </div>
+
+            <div class="email">
+               <label for="email">Email Address *</label>
+               <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="email@example.com"
+                  autocomplete="email"
+                  aria-invalid="true"
+                  data-error="email-error"
+                  required
+               />
+               <!-- field is required-->
+               <span class="error-message" id="email-error">
+                  Please enter a valid email address</span
+               >
+            </div>
+
+            <fieldset class="query">
+               <legend>Query Type *</legend>
+               <div>
+                  <input
+                     type="radio"
+                     name="queryType"
+                     id="generalEnquiry"
+                     data-error="query-error"
+                  />
+                  <label for="generalEnquiry">General Enquiry</label>
+               </div>
+               <div>
+                  <input
+                     type="radio"
+                     name="queryType"
+                     id="supportRequest"
+                     data-error="query-error"
+                  />
+                  <label for="supportRequest">Support Request</label>
+               </div>
+               <span class="error-message" id="query-error">
+                  Please select a query type</span
+               >
+            </fieldset>
+
+            <div class="message">
+               <label for="message"> Message </label>
+               <textarea name="Message" id="message" data-error="message-error">
+               </textarea>
+               <span class="error-message" id="message-error">
+                  This field is required
+               </span>
+            </div>
+
+            <div class="confirm">
+               <input
+                  type="checkbox"
+                  name="consent"
+                  id="consent"
+                  data-error="consent-error"
+                  required
+               />
+               <label for="consent">
+                  I consent to being contacted by the team *
+               </label>
+               <span class="error-message" id="consent-error">
+                  To submit this form, please consent to being contacted
+               </span>
+            </div>
+
+            <button type="submit">Submit</button>
+         </form>
+      </div>
+
+      <!-- <div class="succes">
+         <p>Message Sent!</p>
+         <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </div> -->
+   </body>
+</html>

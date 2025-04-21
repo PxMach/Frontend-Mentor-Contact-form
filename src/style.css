@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: "Karla", sans-serif;
+}
+body {
+   background-color: hsl(148, 38%, 91%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+.container {
+   background-color: hsl(0, 0%, 100%);
+   border-radius: 15px;
+   width: 600px;
+   padding: 20px;
+   color: hsl(187, 24%, 22%);
+   display: flex;
+   flex-direction: column;
+}
+h2 {
+   margin-bottom: 20px;
+}
+
+/* FUll Name */
+form .full-name {
+   display: flex;
+   margin-bottom: 20px;
+   gap: 10px;
+}
+.full-name .name {
+   display: flex;
+   flex-direction: column;
+}
+.full-name .name label {
+   margin-bottom: 10px;
+}
+.full-name .name input {
+   width: 275px;
+   height: 40px;
+   border-radius: 5px;
+   border: 1px solid hsl(187, 24%, 22%);
+   cursor: pointer;
+   outline: none;
+}
+.full-name .name input::placeholder {
+   padding: 15px;
+   color: hsl(187, 24%, 22%);
+}
+.full-name .name input:hover {
+   border: 2px solid hsl(169, 82%, 27%);
+}
+.full-name .name input:focus {
+   border: 2px solid hsl(169, 82%, 27%);
+}
+
+/* Email */
+.email {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 20px;
+}
+.email label {
+   margin-bottom: 10px;
+}
+.email input {
+   max-width: 560px;
+   height: 40px;
+   border-radius: 5px;
+   border: 1px solid hsl(187, 24%, 22%);
+   cursor: pointer;
+   outline: none;
+}
+.email input::placeholder {
+   padding: 15px;
+   color: hsl(187, 24%, 22%);
+}
+.email input:hover {
+   border: 2px solid hsl(169, 82%, 27%);
+}
+.email input:focus {
+   border: 2px solid hsl(169, 82%, 27%);
+}
+
+/* Fieldset */
+.query {
+   display: flex;
+   gap: 10px;
+   margin-bottom: 20px;
+   border: none;
+}
+.query legend {
+   margin-bottom: 10px;
+}
+.query div {
+   display: flex;
+   align-items: center;
+   padding: 15px;
+   text-align: center;
+   width: 275px;
+   height: 40px;
+   border-radius: 5px;
+   border: 1px solid hsl(187, 24%, 22%);
+   cursor: pointer;
+}
+.query div:hover {
+   border: 2px solid hsl(169, 82%, 27%);
+}
+.query div input {
+   margin-right: 10px;
+   cursor: pointer;
+   border-radius: 50px;
+}
+.query div input:focus {
+   border: 2px solid hsl(169, 82%, 27%);
+}
+.query div input:checked {
+   accent-color: hsl(169, 82%, 27%); /* Change la couleur du bouton radio */
+}
+.query div:has(input:checked) {
+   background-color: hsl(148, 38%, 91%);
+   border: 2px solid hsl(169, 82%, 27%);
+}
+
+/* Message */
+.message {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 20px;
+}
+.message label {
+   margin-bottom: 10px;
+}
+.message textarea {
+   height: 90px;
+   border-radius: 10px;
+   outline: none;
+}
+.message textarea:focus {
+   border: 2px solid hsl(169, 82%, 27%);
+}
+
+/* Confirm */
+.confirm {
+   display: block;
+   align-items: center;
+   margin-bottom: 20px;
+}
+.confirm input {
+   margin-right: 10px;
+   cursor: pointer;
+}
+.confirm input:checked {
+   accent-color: hsl(169, 82%, 27%);
+}
+.confirm label {
+   cursor: pointer;
+}
+.confirm label:hover {
+   color: hsl(169, 82%, 27%);
+}
+
+/* Erro message */
+.error-message {
+   display: none;
+   color: red;
+}
+
+/* button */
+form button {
+   margin-bottom: 20px;
+   cursor: pointer;
+   background-color: hsl(169, 82%, 27%);
+   width: 99%;
+   height: 40px;
+   color: white;
+   border: none;
+   border-radius: 5px;
+}
+form button:hover {
+   background-color: hsl(169, 85%, 13%);
+}
+@keyframes shake {
+   0% {
+      transform: translateX(0);
+   }
+   25% {
+      transform: translateX(-5px);
+   }
+   50% {
+      transform: translateX(5px);
+   }
+   75% {
+      transform: translateX(-5px);
+   }
+   100% {
+      transform: translateX(0);
+   }
+}
+button:active {
+   animation: shake 0.3s ease-in-out;
+}
