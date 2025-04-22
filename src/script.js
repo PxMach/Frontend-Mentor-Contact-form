@@ -1,22 +1,22 @@
-const form = document.querySelector("form"); // Sélection du formulaire
+const form = document.querySelector("form");
 const inputs = document.querySelectorAll("input, textarea");
 const consent = document.getElementById("consent");
 const consentError = document.getElementById("consent-error");
 const succes = document.querySelector(".succes");
 
-// Fonction de validation générale
+// General validation function
 function validateInput(input) {
    const errorId = input.getAttribute("data-error");
    const errorMessage = document.getElementById(errorId);
    if (!errorMessage) return;
 
-   // Vérification des champs texte (minimum 8 caractères)
+   // Check text fields (minimum 8 characters)
    if (input.type === "text" && input.value.trim().length < 8) {
       errorMessage.style.display = "flex";
       return false;
    }
 
-   // Vérification des emails
+   // Check emails
    if (input.type === "email") {
       const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
       if (!emailPattern.test(input.value.trim())) {
@@ -25,7 +25,7 @@ function validateInput(input) {
       }
    }
 
-   // Vérification des cases non remplies
+   // Checking boxes not filled in
    if (input.value.trim() === "") {
       errorMessage.style.display = "flex";
       return false;
@@ -35,7 +35,7 @@ function validateInput(input) {
    return true;
 }
 
-// Vérification des boutons radio (Query Type)
+// Checking radio buttons (Query Type)
 function validateRadio() {
    const queryRadios = document.querySelectorAll('input[name="queryType"]');
    const queryError = document.getElementById("query-error");
@@ -50,7 +50,7 @@ function validateRadio() {
    return true;
 }
 
-// Validation du consentement (checkbox)
+// Consent validation (checkbox)
 function validateConsent() {
    if (!consent.checked) {
       consentError.style.display = "flex";
@@ -61,7 +61,7 @@ function validateConsent() {
    return true;
 }
 
-// Validation du formulaire avant soumission
+// Form validation before submission
 form.addEventListener("submit", function (event) {
    let hasErrors = false;
 
@@ -76,15 +76,15 @@ form.addEventListener("submit", function (event) {
    }
 
    if (!hasErrors) {
-      succes.classList.add("show"); // Affiche le message de succès
+      succes.classList.add("show"); // Displays the success message
       setTimeout(() => {
-         form.reset(); // Réinitialise le formulaire après succès
-         succes.classList.remove("show"); // Cache après 3 secondes (ajustable)
-      }, 3000); // Ajuste la durée ici
+         form.reset(); // Reset the form after success
+         succes.classList.remove("show"); // Hide after 3 seconds (adjustable)
+      }, 3000);
    }
 });
 
-// Écouteur pour mettre à jour les erreurs en temps réel
+// Listener to update errors in real time
 inputs.forEach((input) => {
    input.addEventListener("input", () => validateInput(input));
 });
