@@ -80,7 +80,7 @@ form.addEventListener("submit", function (event) {
       setTimeout(() => {
          form.reset(); // Réinitialise le formulaire après succès
          succes.classList.remove("show"); // Cache après 3 secondes (ajustable)
-      }, 10000); // Ajuste la durée ici
+      }, 3000); // Ajuste la durée ici
    }
 });
 

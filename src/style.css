@@ -214,6 +214,7 @@ button:active {
    color: white;
    padding: 20px;
    border-radius: 10px;
+   opacity: 0;
    transition: 0.5s ease-out;
 }
 .sent {
@@ -227,4 +228,30 @@ button:active {
 .succes.show {
    display: flex;
    opacity: 1;
+}
+
+@media (max-width: 620px) {
+   .container {
+      width: 325px;
+      display: flex;
+      flex-direction: column;
+   }
+   form .full-name {
+      display: flex;
+      flex-direction: column;
+   }
+   .email input {
+      max-width: 275px;
+      height: 40px;
+   }
+   .query {
+      display: flex;
+      flex-direction: column;
+   }
+   .message textarea {
+      height: 90px;
+      width: 275px;
+      border-radius: 10px;
+      outline: none;
+   }
 }
